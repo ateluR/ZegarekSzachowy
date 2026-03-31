@@ -1,0 +1,6 @@
+0.Łatwy czas
+1.Zabezpieczene przycisków nie klikam 2 razy tego samego
+2.Co na końcu?
+3.Co po kliknięciu np.zwiększ czas
+4.Układ poziomy 
+5.Zapamiętać dane przy obróceniu
