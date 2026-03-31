@@ -15,15 +15,18 @@ public class Gracz {
         ileSekund= 180;
         if(czyAktywny) {
             uruchomZegar();
+            button.setEnabled(false);
         }
     }
     public void odwrocAktywnosc(){
         czyAktywny = !czyAktywny;
         if(czyAktywny){
             uruchomZegar();
+            button.setEnabled(false);
         }
         else{
             zatrzymajZegar();
+            button.setEnabled(true);
         }
     }
     private void uruchomZegar(){
@@ -31,7 +34,7 @@ public class Gracz {
             @Override
             public void onTick(long l) {
             ileSekund= (int)l/1000;
-            button.setText(String.valueOf(ileSekund));
+            button.setText(String.valueOf(wyswietlCzas(ileSekund)));
             }
             @Override
             public void onFinish() {
@@ -44,5 +47,10 @@ public class Gracz {
     }
     private void zatrzymajZegar(){
         countDownTimer.cancel();
+    }
+    private String wyswietlCzas(int ile) {
+        int sekundy = ile % 60;
+        int minuty = (ile / 60) % 60;
+        return String.format("%02d:%02d",minuty,sekundy);
     }
 }
